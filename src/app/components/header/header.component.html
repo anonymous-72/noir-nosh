@@ -1,0 +1,37 @@
+<header class="mb-[34px] md:mb-[60px] lg:mb-20 xl:mb-16">
+  <div class="flex justify-between items-center py-8 px-8 md:py-9 md:px-12 lg:py-10 lg:px-[84px] xl:py-12 xl:px-[140px]">
+    <div>
+      <a href="/" class="font-playfairblack text-2xl text-darkblack">NOIR NOSH</a>
+    </div>
+    <nav>
+      <ul class="hidden md:flex flex-row gap-5">
+        <li>
+          <app-nav-link link="/home" label="Home" />
+        </li>
+        <li>
+          <app-nav-link link="/menu" label="Our Menu" />
+        </li>
+        <li>
+          <app-nav-link link="/reservation" label="Reservation" />
+        </li>
+      </ul>
+    </nav>
+    <button class="md:hidden" (click)="toggleMenu()">
+      <img *ngIf="!menuOpen" src="/assets/icons/menu.png" alt="menu">
+      <img *ngIf="menuOpen" src="/assets/icons/close.png" alt="close">
+    </button>
+  </div>
+  <div *ngIf="menuOpen" class="md:hidden absolute w-full bg-white pb-8 animate-slide-in">
+    <ul class="flex flex-col items-center gap-5">
+      <li>
+        <app-nav-link link="/" label="Home" />
+      </li>
+      <li>
+        <app-nav-link link="/menu" label="Our Menu" />
+      </li>
+      <li>
+        <app-nav-link link="/reservation" label="Reservation" />
+      </li>
+    </ul>
+  </div>
+</header>

@@ -1,0 +1,71 @@
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-5 mb-16">
+  <div class="grid gap-5 md:grid-cols-2">
+    <div class="flex flex-col gap-2">
+      <label class="font-gsmedium text-gunsmoke text-sm leading-5">First Name</label>
+      <input
+        type="text"
+        formControlName="firstName"
+        placeholder="Anisa"
+        class="font-gsmedium text-black text-base leading-7 border border-lightgray p-4 outline-none placeholder:text-lightgray focus:border-darkgray transition duration-700"
+      >
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-gsmedium text-gunsmoke text-sm leading-5">Last Name</label>
+      <input
+        type="text"
+        formControlName="lastName"
+        placeholder="Rianii"
+        class="font-gsmedium text-black text-base leading-7 border border-lightgray p-4 outline-none placeholder:text-lightgray focus:border-darkgray transition duration-700"
+      >
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-gsmedium text-gunsmoke text-sm leading-5">Phone Number</label>
+      <input
+        type="tel"
+        formControlName="phoneNumber"
+        placeholder="xxxxxxxxx"
+        class="font-gsmedium text-black text-base leading-7 border border-lightgray p-4 outline-none placeholder:text-lightgray focus:border-darkgray transition duration-700"
+      >
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-gsmedium text-gunsmoke text-sm leading-5">Email</label>
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="anisa@example.com"
+        class="font-gsmedium text-black text-base leading-7 border border-lightgray p-4 outline-none placeholder:text-lightgray focus:border-darkgray transition duration-700"
+      >
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <label class="font-gsmedium text-gunsmoke text-sm leading-5">Date</label>
+    <input
+      type="date"
+      formControlName="date"
+      class="font-gsmedium text-black text-base leading-7 border border-lightgray p-4 outline-none placeholder:text-lightgray focus:border-darkgray transition duration-700"
+    >
+  </div>
+  <div class="grid gap-5 md:grid-cols-2">
+    <div class="flex flex-col gap-2">
+      <label class="font-gsmedium text-gunsmoke text-sm leading-5">Time</label>
+      <select formControlName="time" class="bg-white p-4 border border-lightgray outline-none focus:border-darkgray transition duration-700">
+        <option *ngFor="let time of timeOptions" [value]="time" class="font-gsmedium text-black text-base leading-7">{{ time }}</option>
+      </select>
+    </div>
+    <div class="flex flex-col gap-2">
+      <label class="font-gsmedium text-gunsmoke text-sm leading-5">Number of Seats</label>
+      <select formControlName="numberOfSeats" class="bg-white p-4 border border-lightgray outline-none focus:border-darkgray transition duration-700">
+        <option *ngFor="let seats of seatsOptions" [value]="seats" class="font-gsmedium text-black text-base leading-7">{{ seats }}</option>
+      </select>
+    </div>
+  </div>
+  <div class="flex flex-col gap-2">
+    <label class="font-gsmedium text-gunsmoke text-sm leading-5">Message</label>
+    <textarea placeholder="Additional details" class="font-gsmedium text-black text-base leading-7 border border-lightgray p-4 outline-none placeholder:text-lightgray focus:border-darkgray transition duration-700 resize-none"></textarea>
+  </div>
+  <div class="flex items-center gap-3">
+    <input type="checkbox" id="input-check">
+    <label for="input-check" class="font-gsmedium text-base leading-7 text-gunsmoke select-none cursor-pointer">I agree to receive occasional updates and offers</label>
+  </div>
+  <button type="submit" class="bg-darkblack text-white font-gsbold text-xl leading-6 py-6 hover:bg-darkgray transition" [disabled]="!reservationForm.valid">Reserve a Table</button>
+</form>

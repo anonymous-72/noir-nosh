@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,8 +17,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FooterLinkComponent } from './components/footer-link/footer-link.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
-import { TitleComponent } from './pages/menu-page/title/title.component';
+import { TitleComponent } from './components/title/title.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { MenuListComponent } from './pages/menu-page/components/menu-list/menu-list.component';
+import { MenuCardComponent } from './pages/menu-page/components/menu-card/menu-card.component';
+import { ReservationFormComponent } from './pages/reservation/components/reservation-form/reservation-form.component';
 
 @NgModule({
   declarations: [
@@ -34,11 +39,16 @@ import { ReservationComponent } from './pages/reservation/reservation.component'
     HomeComponent,
     MenuPageComponent,
     TitleComponent,
-    ReservationComponent
+    ReservationComponent,
+    MenuListComponent,
+    MenuCardComponent,
+    ReservationFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

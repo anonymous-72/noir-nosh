@@ -1,0 +1,8 @@
+<div class="grid grid-cols-1 items-center gap-5 md:grid-cols-[184px,auto]">
+  <img src="/assets/menu/{{ type }}/{{ image }}" alt="{{ name }}" class="w-full h-[240px] md:w-[184px] md:h-[184px] object-cover">
+  <div class="flex flex-col gap-2">
+    <h5 class="font-gsbold text-black text-lg leading-7">{{ name }}</h5>
+    <p class="font-gsregular text-darkgray text-lg leading-7">{{ description }}</p>
+    <p class="font-gsbold text-black text-lg leading-7">{{ price | currency: 'USD' }}</p>
+  </div>
+</div>

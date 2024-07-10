@@ -1,0 +1,16 @@
+<section class="mb-16 md:mb-[84px] lg:mb-[120px] xl:mx-[84px]">
+  <div class="flex items-center gap-5 mb-10">
+    <h3 class="font-gsbold text-black text-[32px] leading-[42px]">{{ title }}</h3>
+    <div class="bg-lightgray w-full h-[1px]"></div>
+  </div>
+  <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-5">
+    <div *ngFor="let item of items">
+      <app-menu-card [name]="item.name"
+                     type="{{ type }}"
+                     [description]="item.description"
+                     [price]="item.price"
+                     [image]="item.image"
+      ></app-menu-card>
+    </div>
+  </div>
+</section>
